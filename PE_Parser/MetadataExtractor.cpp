@@ -45,8 +45,8 @@ bool MetadataExtractor::Process(const char* filepath)
 	if (!filepath || !*filepath || !m_parser.parse(filepath))
 		return false;
 
-	//auto resource_ok = m_parser.parseResourceDir((int)RT_VERSION);
-	auto resource_ok = m_parser.parseResourceDir((int)RT_ICON);
+	auto resource_ok = m_parser.parseResourceDir((int)RT_VERSION);
+	//auto resource_ok = m_parser.parseResourceDir((int)RT_ICON);
 	auto version_ok = resource_ok ? m_parser.parseVersionInfo(m_version_info) : false;
 	auto originalName = version_ok ? searchVersionInfoByName("OriginalFilename") : "";
 	auto companyName = version_ok ? searchVersionInfoByName("CompanyName") : "";
